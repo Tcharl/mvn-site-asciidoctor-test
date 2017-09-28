@@ -35,11 +35,12 @@
 					<locales>de</locales>
 					<asciidoc>
 						<attributes>
-							<project-asciidoc-path>${project.baseUri}src/site/asciidoc</project-asciidoc-path>
+							<project-basedir>${project.basedir}</project-basedir>
 							<project-version>${project.version}</project-version>
 							<project-name>${project.name}</project-name>
 							<project-artifactId>${project.artifactId}</project-artifactId>
 							<build-date>${maven.build.timestamp}</build-date>
+							<build-site>true</build-site>
 						</attributes>
 					</asciidoc>
 				</configuration>
@@ -60,8 +61,12 @@
 					<sourceDirectory>src/site/asciidoc</sourceDirectory>
 					<!-- Attributes common to all output formats -->
 					<attributes>
+						<project-basedir>${project.basedir}</project-basedir>
 						<project-version>${project.version}</project-version>
+						<project-name>${project.name}</project-name>
+						<project-artifactId>${project.artifactId}</project-artifactId>
 						<build-date>${maven.build.timestamp}</build-date>
+						<build-site>false</build-site>
 					</attributes>
 				</configuration>
 				<executions>

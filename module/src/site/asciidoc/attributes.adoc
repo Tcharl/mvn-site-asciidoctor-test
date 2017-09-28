@@ -1,8 +1,12 @@
 
-ifndef::parentdir[:parentdir: ../../../../../doc/src/site]
+ifeval::["{build-site}" == "true"]
+ifndef::parentdir[:parentdir: {project-basedir}/src/site/asciidoc]
+endif::[]
+ifndef::parentdir[:parentdir: {project-basedir}/../src/site/asciidoc]
+
 
 // Import global attributs
-include::{parentdir}/asciidoc/global-attributes.adoc[]
+include::{parentdir}/global-attributes.adoc[]
 
 :module-name: Module Site
 :server-hostname: moduleserver

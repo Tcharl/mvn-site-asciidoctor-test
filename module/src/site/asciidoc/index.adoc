@@ -2,7 +2,12 @@
 :icons: font
 :source-highlighter: prettify
 
-include::attributes.adoc[]
+ifeval::["{build-site}" == "true"]
+:asciidoc-dir: {project-basedir}/module/src/site/asciidoc
+endif::[]
+ifndef::asciidoc-dir[:asciidoc-dir: {project-basedir}/src/site/asciidoc]
+
+include::{asciidoc-dir}/attributes.adoc[]
 
 = Module Site
 My Name <anonymous@nothing.de>
@@ -25,4 +30,4 @@ module-name:: {module-name}
 server-hostname:: {server-hostname}
 server-ip:: {server-ip}
 
-include::debug.adoc[]
+include::{asciidoc-dir}/debug.adoc[]

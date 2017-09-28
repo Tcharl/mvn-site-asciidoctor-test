@@ -12,7 +12,7 @@ safe-mode-name:: {safe-mode-name}
 docdir:: {docdir}
 
 .Attributes imported from Maven
-project-asciidoc-path:: {project-asciidoc-path}
+project-basedir:: {project-basedir}
 project-version:: {project-version}
 project-name:: {project-name}
 project-artifactId:: {project-artifactId}
