@@ -1,0 +1,28 @@
+:debug: true
+:icons: font
+:source-highlighter: prettify
+
+include::attributes.adoc[]
+
+= Module Site
+My Name <anonymous@nothing.de>
+:toc: macro
+:toc-title:
+{build-date}
+:revnumber: {project-version}
+
+Maven Site Module Asciidoctor Test: 
+
+toc::[]
+
+== Global Attributes
+
+glob-test-attr:: {glob-test-attr}
+
+== Module Attributes
+
+module-name:: {module-name}
+server-hostname:: {server-hostname}
+server-ip:: {server-ip}
+
+include::debug.adoc[]

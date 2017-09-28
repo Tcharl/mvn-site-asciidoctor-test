@@ -1,0 +1,4 @@
+
+include::global-attributes.adoc[]
+
+:parent-name: Parent Site 

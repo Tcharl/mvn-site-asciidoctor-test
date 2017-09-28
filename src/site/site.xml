@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="${project.name}">
+
+	<skin>
+		<groupId>org.apache.maven.skins</groupId>
+		<artifactId>maven-fluido-skin</artifactId>
+		<version>1.6</version>
+	</skin>
+
+	<body>
+
+		<menu name="${project.name}">
+			<item href="index.html" name="Parent Site" />
+		</menu>
+
+		<menu ref="modules" />
+	</body>
+</project>

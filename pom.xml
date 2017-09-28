@@ -1,0 +1,153 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.failure</groupId>
+	<artifactId>parent-site</artifactId>
+	<version>0.1.0</version>
+	<packaging>pom</packaging>
+
+	<name>Parent Site</name>
+	<description>Parent Site Description</description>
+	<url>http://localhost/test-doc/</url>
+
+	<modules>
+		<module>module</module>
+	</modules>
+
+	<properties>
+		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<asciidoctor.maven.plugin.version>1.5.6</asciidoctor.maven.plugin.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<configuration>
+					<locales>de</locales>
+					<asciidoc>
+						<attributes>
+							<project-asciidoc-path>${project.baseUri}src/site/asciidoc</project-asciidoc-path>
+							<project-version>${project.version}</project-version>
+							<project-name>${project.name}</project-name>
+							<project-artifactId>${project.artifactId}</project-artifactId>
+							<build-date>${maven.build.timestamp}</build-date>
+						</attributes>
+					</asciidoc>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.asciidoctor</groupId>
+						<artifactId>asciidoctor-maven-plugin</artifactId>
+						<version>${asciidoctor.maven.plugin.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+			<plugin>
+				<groupId>org.asciidoctor</groupId>
+				<artifactId>asciidoctor-maven-plugin</artifactId>
+				<version>${asciidoctor.maven.plugin.version}</version>
+				<configuration>
+					<sourceDirectory>src/site/asciidoc</sourceDirectory>
+					<!-- Attributes common to all output formats -->
+					<attributes>
+						<project-version>${project.version}</project-version>
+						<build-date>${maven.build.timestamp}</build-date>
+					</attributes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>asciidoc-to-html</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>process-asciidoc</goal>
+						</goals>
+						<configuration>
+							<backend>html5</backend>
+							<attributes>
+								<imagesdir>./images</imagesdir>
+								<toc>left</toc>
+								<icons>font</icons>
+								<sectanchors>true</sectanchors>
+								<!-- set the idprefix to blank -->
+								<idprefix />
+								<idseparator>-</idseparator>
+								<docinfo1>true</docinfo1>
+							</attributes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.6</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-project-info-reports-plugin</artifactId>
+					<version>2.9</version>
+				</plugin>
+
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.asciidoctor
+										</groupId>
+										<artifactId>
+											asciidoctor-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.5.6,)
+										</versionRange>
+										<goals>
+											<goal>
+												process-asciidoc
+											</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute>
+											<runOnConfiguration>true</runOnConfiguration>
+											<runOnIncremental>true</runOnIncremental>
+										</execute>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<distributionManagement>
+		<site>
+			<id>site-dist</id>
+			<name>Site</name>
+			<url>file:///var/www/html/doc/test</url>
+		</site>
+	</distributionManagement>
+</project>

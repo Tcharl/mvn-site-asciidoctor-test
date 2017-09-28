@@ -1,0 +1,26 @@
+:debug: true
+:icons: font
+:source-highlighter: prettify
+
+include::attributes-parent.adoc[]
+
+= Parent Site
+My Name <anonymous@nothing.de>
+:toc: macro
+:toc-title:
+{build-date}
+:revnumber: {project-version}
+
+Maven Site Parent Asciidoctor Test: 
+
+toc::[]
+
+== Parent (own) Attributes
+
+parent-name:: {parent-name}
+
+== Global Attributes
+
+glob-test-attr:: {glob-test-attr}
+
+include::debug-parent.adoc[]

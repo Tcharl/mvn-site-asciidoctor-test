@@ -1,0 +1,21 @@
+
+ifeval::[{debug} == true]
+== Debug Module Attributes
+
+[TIP]
+Use http://asciidoctor.org[Asciidoctor] for the best AsciiDoc experience.footnote:[Not to mention the best looking output!]
+Then icon:twitter[role=aqua] about it!
+
+.Built-in Attributes
+asciidoctor-version:: {asciidoctor-version}
+safe-mode-name:: {safe-mode-name}
+docdir:: {docdir}
+
+.Attributes imported from Maven
+project-asciidoc-path:: {project-asciidoc-path}
+project-version:: {project-version}
+project-name:: {project-name}
+project-artifactId:: {project-artifactId}
+build-date:: {build-date}
+
+endif::[]

@@ -1,0 +1,9 @@
+
+ifndef::parentdir[:parentdir: ../../../../../doc/src/site]
+
+// Import global attributs
+include::{parentdir}/asciidoc/global-attributes.adoc[]
+
+:module-name: Module Site
+:server-hostname: moduleserver
+:server-ip: 8.8.8.8

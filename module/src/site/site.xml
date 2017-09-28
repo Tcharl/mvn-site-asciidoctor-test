@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="${project.name}">
+	<body>
+
+		<menu name="${project.name}">
+			<item href="index.html" name="Module Site" />
+		</menu>
+
+		<menu ref="parent" />
+	</body>
+</project>
